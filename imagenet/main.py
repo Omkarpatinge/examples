@@ -4,6 +4,7 @@ import random
 import shutil
 import time
 import warnings
+import datetime
 
 import torch
 import torch.nn as nn
@@ -423,4 +424,6 @@ def accuracy(output, target, topk=(1,)):
 
 
 if __name__ == '__main__':
+    print(datetime.datetime.now())
     main()
+    print(datetime.datetime.now())
