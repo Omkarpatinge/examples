@@ -213,10 +213,7 @@ def main_worker(gpu, ngpus_per_node, args):
             normalize,
         ]))
     
-    datalength = len(img_dataset)
-    trainlength = int(datalength*0.7)
-    vallength = datalength-trainlength
-    split_set = torch.utils.data.random_split(img_dataset, [trainlength,vallength])
+    split_set = torch.utils.data.random_split(img_dataset, [int(len(img_dataset)*0.75),len(img_dataset)-int(len(img_dataset)*0.75)])
 
     train_dataset = split_set[0]
     val_dataset = split_set[1]
